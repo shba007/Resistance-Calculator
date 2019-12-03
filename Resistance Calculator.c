@@ -44,14 +44,14 @@ int main()
 	printf("\n\x1b[38;5;0m\x1b[48;5;15mBK = Black\x1b[0m\x1b[38;5;94m\tBN = Brown\x1b[38;5;160m\tRD = Red\x1b[38;5;202m\tOG = Orange\x1b[38;5;226m\tYE = Yellow\x1b[38;5;40m\tGN = Green\n");
 	printf("\x1b[38;5;39mBU = Blue\x1b[38;5;56m\tVT= Violate\x1b[38;5;244m\tGY = Gray\x1b[38;5;15m\tWH = White\x1b[38;5;214m\tGD = Gold\x1b[38;5;250m\tSR = Silver\x1b[38;5;201m\tPK = Pink\x1b[0m\n");
 
-	printf("\nEnter the Color Coding on Resistor[Separate by space]: ");
+	printf("\nEnter the Color Coding on Resistor[Separate by space(Case Insensitive)]: ");
 	scanf("%[^\n]s", buffer);
 
 	const int size = (strlen(buffer) + 1) / 3;
 	//Checking less or more character
 	if (size < 3 || size > 6)
 	{
-		printf("\nInvalid Input\n");
+		printf("\nInvalid Band Number. The Commercial Resistor has 3-6 Bands\n");
 		return 0;
 	}
 	char colours[size][3];
@@ -65,7 +65,7 @@ int main()
 		//Cheacking invalid character
 		if (!((buffer[i] > 64 && buffer[i] < 91) || buffer[i] == ' ' || buffer[i] == '\0'))
 		{
-			printf("\nInvalid character\n");
+			printf("\nInvalid Character. You entered other then alphabetical character\n");
 			return 0;
 		}
 		//Shifting buffer array to left if multiple space detected
@@ -91,7 +91,7 @@ int main()
 		{
 			if (j > 12)
 			{
-				printf("\nInvaid Colour Code\n");
+				printf("\nInvaid Colour Code. You entered other Code than given above\n");
 				return 0;
 			}
 			if (strcmp(colours[i], code[j].colour) == 0)
