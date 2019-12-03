@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
+#include <conio.h>
 #include <fcntl.h>
 #include <io.h>
 
@@ -115,6 +116,6 @@ int main()
 	wprintf(L"\nThe Resistance Value R = %d X 10^%d \x2126 \x00B1%.2f %d ppm/K\n", res, mlp, tol, temp);
 	_setmode(_fileno(stdout), _O_TEXT);
 
-	getchar();
+	getch();
 	return 0;
 }
