@@ -111,7 +111,7 @@ int main()
 		}
 	}
 
-	//Output
+	//Resistance Value as Output 
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	wprintf(L"\nThe Resistance Value R = %d X 10^%d \x2126 \x00B1%.2f %d ppm/K\n", res, mlp, tol, temp);
 	_setmode(_fileno(stdout), _O_TEXT);
