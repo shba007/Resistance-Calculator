@@ -5,6 +5,9 @@
 #include <fcntl.h>
 #include <io.h>
 
+#define _O_U8TEXT 0x00040000
+#define _O_U16TEXT 0x00020000
+
 struct colourchart
 {
 	char colour[3];
@@ -111,7 +114,7 @@ int main()
 		}
 	}
 
-	//Resistance Value as Output 
+	//Resistance Value as Output
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	wprintf(L"\nThe Resistance Value R = %d X 10^%d \x2126 \x00B1%.2f %d ppm/K\n", res, mlp, tol, temp);
 	_setmode(_fileno(stdout), _O_TEXT);
